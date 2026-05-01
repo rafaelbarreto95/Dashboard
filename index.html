@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Notes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- LOGIN -->
+<section class="landing">
+
+  <div class="hero">
+
+    <!-- LADO ESQUERDO -->
+    <div class="hero-left">
+      <h1>
+        Organize sua vida com <span>Quick Notes</span>
+      </h1>
+
+      <p>
+        Gerencie tarefas, prioridades e produtividade em um só lugar.
+      </p>
+
+      <div class="hero-badges" >
+        <span> Rápido e intuitivo </span>
+        <span> Calendário incluso </span>
+        <span> Controle de prioridades </span>
+      </div>
+
+      <button onclick="login()">🚀 Começar agora</button>
+
+    </div>
+
+    <!-- LADO DIREITO -->
+    <div class="hero-right">
+      <div class="mockup">
+        <img src="./img/preview.png" alt="App preview">
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+    <!-- APP -->
+    <div id="app" class="app">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <h2>🚀 Quick Notes</h2>
+
+            <nav>
+                <button data-filter="all" onclick="setFilter('all')" class="active">📋 Todas</button>
+                <button data-filter="done" onclick="setFilter('done')">✅ Concluídas</button>
+                <button data-filter="pending" onclick="setFilter('pending')">⏳ Pendentes</button>
+            </nav>
+
+            <!-- CALENDÁRIO -->
+            <div class="calendar">
+                <div class="calendar-header">
+                    <button onclick="prevMonth()">⬅</button>
+                    <h3 id="monthYear"></h3>
+                    <button onclick="nextMonth()">➡</button>
+                </div>
+                <div id="calendarDays" class="calendar-days"></div>
+            </div>
+
+            <div class="sidebar-footer">
+                <button onclick="toggleTheme()">🌙 Tema</button>
+                <button onclick="logout()">🚪 Sair</button>
+            </div>
+        </aside>
+
+        <!-- MAIN -->
+        <main class="main">
+
+            <header class="header">
+                <div>
+                    <h1>📌 Minhas Tarefas</h1>
+                    <p id="welcome"></p>
+                </div>
+
+                <div class="datetime">
+                    <span id="date"></span>
+                    <span id="clock"></span>
+                </div>
+            </header>
+
+            <section class="metrics">
+                <div class="card">
+                    <h3 id="total">0</h3>
+                    <p>📊 Total</p>
+                </div>
+                <div class="card">
+                    <h3 id="done">0</h3>
+                    <p>✅ Concluídas</p>
+                </div>
+            </section>
+
+            <section class="add-task">
+                <input type="text" id="taskInput" placeholder="✍️ Digite uma tarefa...">
+
+                <select id="priority">
+                    <option value="low">🟢 <b>Baixa</b></option>
+                    <option value="medium">🟡 <b>Média</b></option>
+                    <option value="high">🔴 <b>Alta</b></option>
+                </select>
+
+                <button id="addTaskBtn">➕ Adicionar</button>
+            </section>
+
+            <section id="taskList"></section>
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
